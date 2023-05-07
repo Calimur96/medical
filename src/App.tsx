@@ -4,11 +4,10 @@ import { Route, Routes } from "react-router-dom";
 import { useAuth } from "./store/auth";
 
 function App() {
-  const { getLogin, getSessionUser } = useAuth();
+  const { getSessionUser } = useAuth();
 
   useEffect(() => {
-    getLogin("asdasd@gmail.com", "123456");
-    // getSessionUser();
+    getSessionUser();
   }, []);
 
   return (
