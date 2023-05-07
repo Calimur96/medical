@@ -1,0 +1,16 @@
+@import 'reset.scss';
+@import 'buttons.scss';
+@import 'vars.scss';
+
+.input {
+    width: 100%;
+    color: #454545;
+    border-radius: 10px;
+    border: 1px solid #454545;
+    height: 50px;
+    padding: 0 20px;
+}
+
+.input::placeholder {
+    color: #454545;
+}
