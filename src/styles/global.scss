@@ -18,18 +18,16 @@ body {
 }
 
 .input::placeholder {
-<<<<<<< HEAD
-    color: #454545;
-    opacity: .5;
+  color: #454545;
+  opacity: 0.5;
 }
 
 .user-img_small {
-    width: 55px;
-    height: 55px;
-    border-radius: 100px;
-    object-fit: cover;
-}
-=======
+  width: 55px;
+  height: 55px;
+  border-radius: 100px;
+  object-fit: cover;
+
   color: #454545;
   opacity: 0.5;
 }
@@ -73,4 +71,3 @@ body {
     }
   }
 }
->>>>>>> eee9cd61c1515598d1b8e431504029a9740e2dd0
