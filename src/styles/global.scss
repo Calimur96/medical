@@ -1,17 +1,20 @@
-@import 'reset.scss';
-@import 'buttons.scss';
-@import 'vars.scss';
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@import "reset.scss";
+@import "buttons.scss";
+@import "vars.scss";
 
 .input {
-    width: 100%;
-    color: #454545;
-    border-radius: 10px;
-    border: 1px solid #454545;
-    height: 50px;
-    padding: 0 20px;
+  width: 100%;
+  color: #454545;
+  border-radius: 10px;
+  border: 1px solid #454545;
+  height: 50px;
+  padding: 0 20px;
 }
 
 .input::placeholder {
+<<<<<<< HEAD
     color: #454545;
     opacity: .5;
 }
@@ -22,3 +25,15 @@
     border-radius: 100px;
     object-fit: cover;
 }
+=======
+  color: #454545;
+  opacity: 0.5;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: var(--light-blue);
+  font-family: "Inter", sans-serif;
+}
+>>>>>>> eee9cd61c1515598d1b8e431504029a9740e2dd0
