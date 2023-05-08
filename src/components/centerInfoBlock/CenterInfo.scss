@@ -1,0 +1,52 @@
+.center-info {
+    position: absolute;
+    z-index: 10;
+    width: 215px;
+    height: 230px;
+    background-color: var(--red);
+    border-radius: var(--default-radius);
+    color: #fff;
+
+    &__inner {
+        padding: 15px;
+    }
+
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__name {
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 16px;
+    }
+
+    &__subtitle {
+        font-size: 12px;
+    }
+
+    &__stats {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 5px;
+    }
+
+    &__btn {
+        width: 100% !important;
+        height: 100% !important;
+        margin-top: 25px;
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        width: 25px;
+        height: 25px;
+    }
+}

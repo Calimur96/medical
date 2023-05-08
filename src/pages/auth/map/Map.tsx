@@ -7,6 +7,8 @@ import {
 } from "@react-google-maps/api";
 import { ILocation } from "../../../types/location.interface";
 
+import CenterInfo from "../../../components/centerInfoBlock/CenterInfo";
+
 import "./Map.scss";
 
 const Map: FC = () => {
@@ -100,6 +102,7 @@ const Map: FC = () => {
                             }}
                         />
                     </StandaloneSearchBox>
+                    <CenterInfo />
                 </GoogleMap>
             )}
         </div>
