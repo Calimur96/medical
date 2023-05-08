@@ -4,6 +4,10 @@
 @import "buttons.scss";
 @import "vars.scss";
 
+body {
+  background-color: var(--light-blue);
+}
+
 .input {
   width: 100%;
   color: #454545;
@@ -19,8 +23,41 @@
 }
 
 .wrapper {
-  max-width: 1440px;
+  max-width: 1920px;
   margin: 0 auto;
-  background-color: var(--light-blue);
+
   font-family: "Inter", sans-serif;
+
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+
+  .call {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 100px;
+    width: 100px;
+
+    background-color: var(--red);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 40px;
+    color: #fff;
+
+    transition: all 0.2s ease-in-out;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
 }

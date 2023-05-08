@@ -1,4 +1,6 @@
 import { FC, ReactNode } from "react";
+import Sidebar from "../sidebar/Sidebar";
+import { BsTelephoneX } from "react-icons/bs";
 
 interface Props {
   children: ReactNode;
@@ -7,8 +9,11 @@ interface Props {
 const Layout: FC<Props> = ({ children }): JSX.Element => {
   return (
     <div className="wrapper">
-      <div className="sidebar"></div>
-      <main>{children}</main>
+      <Sidebar />
+      <main style={{ padding: "20px" }}>{children}</main>
+      <div className="call">
+        <BsTelephoneX />
+      </div>
     </div>
   );
 };
