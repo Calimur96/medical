@@ -34,7 +34,6 @@ const Sidebar: FC = (): JSX.Element => {
           </li>
         </ul>
       </div>
-      <Menu />
     </div>
   );
 };

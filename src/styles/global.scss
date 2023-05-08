@@ -33,6 +33,7 @@ body {
 }
 
 .wrapper {
+  position: relative;
   max-width: 1920px;
   margin: 0 auto;
 
@@ -62,6 +63,10 @@ body {
 
     cursor: pointer;
 
+    @media (max-width: 800px) {
+      display: none;
+    }
+
     &:hover {
       transform: scale(1.02);
     }
@@ -69,5 +74,11 @@ body {
     &:active {
       transform: scale(0.9);
     }
+  }
+}
+
+main {
+  @media (max-width: 800px) {
+    margin-top: 70px;
   }
 }
