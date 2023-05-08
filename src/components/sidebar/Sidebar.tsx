@@ -2,7 +2,6 @@ import { FC } from "react";
 import "./Sidebar.scss";
 import { BsChatSquareText, BsSearch, BsHouseHeart } from "react-icons/bs";
 import { useMenu } from "../../store/menu";
-import Menu from "../menu/Menu";
 
 const Sidebar: FC = (): JSX.Element => {
   const { setIsActive } = useMenu();
