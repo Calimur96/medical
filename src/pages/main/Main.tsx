@@ -5,7 +5,7 @@ import Layout from "../../components/Layout/Layout";
 const Main: FC = (): JSX.Element => {
   return (
     <Layout>
-      <div>Main</div>
+      <div>lorem1000</div>
     </Layout>
   );
 };
