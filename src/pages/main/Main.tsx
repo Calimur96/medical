@@ -1,8 +1,13 @@
 import { FC } from "react";
 import "./Main.scss";
+import Layout from "../../components/Layout/Layout";
 
 const Main: FC = (): JSX.Element => {
-  return <div className="wrapper">Main</div>;
+  return (
+    <Layout>
+      <div>Main</div>
+    </Layout>
+  );
 };
 
 export default Main;
