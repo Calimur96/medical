@@ -1,0 +1,36 @@
+.auth {
+    &__login {
+        background-color: #fff;
+        width: 1300px;
+        height: 650px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: var(--default-radius);
+        position: relative;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__login-inner {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 10;
+        transform: none;
+        margin: 0;
+        height: 630px;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 30px;
+        border: 1px solid #454545;
+        border-radius: 10px;
+        padding: 40px 20px 30px;
+    }
+
+    &__action {
+        font-size: 18px;
+        text-align: center;
+        cursor: pointer;
+    }
+}

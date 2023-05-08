@@ -1,14 +1,21 @@
 .auth {
-    background-color: #fff;
-    border-radius: 10px;
-    border: 1px solid #454545;
-    padding: 40px 20px 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    width: 340px;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(153deg, rgba(255, 129, 129, 1) 85%, rgba(255, 255, 255, 1) 96%, rgba(255, 255, 255, 1) 100%);
+
+
+    &__inner {
+        border-radius: 10px;
+        border: 1px solid #454545;
+        padding: 40px 20px 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        width: 340px;
+        background-color: #fff;
+    }
 
     &__title {
         text-align: center;
@@ -44,7 +51,39 @@
     }
 
     &__btn {
-        margin-top: 15px;
+        margin-top: 20px;
+    }
+
+    &__code {
+        display: flex;
+        grid-gap: 30px;
+        margin: 55px 0 65px;
+    }
+
+    &__code-input {
+        width: 50px;
+        height: 70px;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 800;
+    }
+
+    &__mail {
+        text-align: center;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    &__number-request {
+        background-color: transparent;
+        display: block;
+        margin: 0 auto;
+        border-bottom: 1px solid #000;
+        margin-bottom: 30px;
+        cursor: pointer;
     }
 
 }

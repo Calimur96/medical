@@ -2,7 +2,11 @@ const ROUTES = {
     main: "/",
     error: "*",
     registration: "/auth/registration",
-    signIn: "auth/sign-In",
+    login: "auth/login",
+    confirm: "/auth/registration/confirmation",
+    map: "/auth/registration/map",
+    forgotPass: "/auth/forgot-password",
+    newPass: "/auth/create-new-password",
 };
 
 export default ROUTES;

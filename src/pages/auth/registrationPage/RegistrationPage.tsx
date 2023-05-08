@@ -1,8 +1,12 @@
 import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 
+import ROUTES from "../../../routes/routes";
 import "./RegistrationPage.scss";
 
 const RegistrationPage: FC = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="auth">
             <div className="auth__inner">
@@ -38,11 +42,16 @@ const RegistrationPage: FC = () => {
                     <span>
                         Я ознакомлен(а) и соглашаюсь с&nbsp;
                         <a href="/" className="auth__policy-link">
-                            правилами и условиями сайта
+                            правилами и условиями сайтаnavigate
                         </a>
                     </span>
                 </div> */}
-                <button className="btn btn_red auth__btn">Продолжить</button>
+                <button
+                    className="btn btn_red auth__btn"
+                    onClick={() => navigate(ROUTES.confirm)}
+                >
+                    Продолжить
+                </button>
             </div>
         </div>
     );
