@@ -1,0 +1,51 @@
+.footer__call {
+  position: absolute;
+  right: 20px;
+  top: -20px;
+  background: var(--red);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 25px;
+
+  // transition: all 0.5s ease-in-out;
+
+  // &:active {
+  //   transform: scale(0.95);
+  // }
+
+  @media (max-width: 800px) {
+    display: flex;
+  }
+
+  &.active {
+    .footer__call-phone {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    .footer__call-plus {
+      transform: scale(2) translate(-6px, 6px) rotate(180deg);
+    }
+  }
+
+  &-phone {
+    transition: all 0.2s ease-in-out;
+    width: 40px;
+    height: 40px;
+  }
+
+  &-plus {
+    transition: all 0.5s ease-in-out;
+
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 10px;
+    right: 10px;
+  }
+}

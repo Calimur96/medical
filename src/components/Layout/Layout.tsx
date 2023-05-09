@@ -1,9 +1,9 @@
 import { FC, ReactNode } from "react";
 import Sidebar from "../sidebar/Sidebar";
-import { BsTelephoneX } from "react-icons/bs";
 import Header from "../header/Header";
 import Menu from "../menu/Menu";
 import Footer from "../footer/Footer";
+import CallBtn from "../callBtn/CallBtn";
 
 interface Props {
   children: ReactNode;
@@ -16,9 +16,7 @@ const Layout: FC<Props> = ({ children }): JSX.Element => {
       <Sidebar />
       <Menu />
       <main style={{ padding: "20px" }}>{children}</main>
-      <div className="call">
-        <BsTelephoneX />
-      </div>
+      <CallBtn className="pc__call" />
       <Footer />
     </div>
   );

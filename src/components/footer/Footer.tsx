@@ -1,20 +1,13 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import "./Footer.scss";
 import { BsChatSquareText, BsHouseHeart, BsSearch } from "react-icons/bs";
+import CallBtn from "../callBtn/CallBtn";
 
 const Footer: FC = (): JSX.Element => {
-  const [isActive, setiIsActive] = useState<boolean>(Boolean);
-
   return (
     <footer className="footer">
       <div className="footer__container">
-        <div
-          className={`footer__call ${isActive && "active"}`}
-          onClick={() => setiIsActive((prev) => !prev)}
-        >
-          <img src="/phone.png" alt="phone" className="footer__call-phone" />
-          <img src="/plus.png" alt="plus" className="footer__call-plus" />
-        </div>
+        <CallBtn />
       </div>
       <ul className="footer__ul">
         <li>
