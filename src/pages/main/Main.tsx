@@ -1,13 +1,15 @@
 import { FC } from "react";
-import "./Main.scss";
+
 import Layout from "../../components/Layout/Layout";
+import ExtraCall from "../../components/extraCall/ExtraCall";
+import { useCall } from "../../store/call";
+
+import "./Main.scss";
 
 const Main: FC = (): JSX.Element => {
-  return (
-    <Layout>
-      <div>lorem1000</div>
-    </Layout>
-  );
+    const { isActive } = useCall();
+
+    return <Layout>{isActive && <ExtraCall />}</Layout>;
 };
 
 export default Main;
