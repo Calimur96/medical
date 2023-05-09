@@ -8,6 +8,7 @@ const ROUTES = {
   forgotPass: "/auth/forgot-password",
   newPass: "/auth/create-new-password",
   location: "/location",
+  entries: "/entries"
 };
 
 export default ROUTES;

@@ -1,6 +1,5 @@
 import { FC } from "react";
 import "./Footer.scss";
-import { BsChatSquareText, BsHouseHeart, BsSearch } from "react-icons/bs";
 import CallBtn from "../callBtn/CallBtn";
 
 const Footer: FC = (): JSX.Element => {
@@ -11,13 +10,17 @@ const Footer: FC = (): JSX.Element => {
       </div>
       <ul className="footer__ul">
         <li>
-          <BsHouseHeart size={25} />
+          <img
+            src="/fi-rr-home.png"
+            alt="home"
+            style={{ transform: "translateY(3.5px)" }}
+          />
         </li>
         <li>
-          <BsChatSquareText size={25} />
+          <img src="/convert.png" alt="convert" />
         </li>
         <li>
-          <BsSearch size={25} />
+          <img src="/search.png" alt="search" />
         </li>
       </ul>
     </footer>
