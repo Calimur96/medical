@@ -21,5 +21,7 @@ export const useLocation = () => {
     );
   }, []);
 
+  console.log("asd");
+
   return { lat, lng, location };
 };
