@@ -19,8 +19,9 @@ export const useLocation = () => {
         setLocation({ lat, lng });
       }
     );
-  }, []);
 
+    console.log("asd");
+  }, []);
 
   return { lat, lng, location };
 };
