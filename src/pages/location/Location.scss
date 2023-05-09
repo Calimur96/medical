@@ -1,0 +1,10 @@
+.location {
+  width: calc(100vw - 300px);
+  height: 100vh;
+  position: absolute;
+  top: 0;
+
+  @media (max-width: 800px) {
+    width: calc(100vw);
+  }
+}
