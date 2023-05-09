@@ -1,6 +1,5 @@
 import { FC } from "react";
 import "./Footer.scss";
-import { BsChatSquareText, BsHouseHeart, BsSearch } from "react-icons/bs";
 import CallBtn from "../callBtn/CallBtn";
 
 const Footer: FC = (): JSX.Element => {
