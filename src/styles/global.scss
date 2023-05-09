@@ -8,6 +8,12 @@ body {
   background-color: var(--light-blue);
 }
 
+main {
+  width: calc(100vw - 300px);
+  background-color: #F8FBFF;
+  padding-top: 40px;
+}
+
 .input {
   width: 100%;
   color: #454545;
@@ -20,6 +26,11 @@ body {
 .input::placeholder {
   color: #454545;
   opacity: 0.5;
+}
+
+.container {
+  width: 1050px;
+  margin: 0 auto;
 }
 
 .user-img_small {

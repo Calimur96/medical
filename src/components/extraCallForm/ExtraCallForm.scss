@@ -1,0 +1,44 @@
+.extra-call {
+    &__form-warning {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 24px;
+    }
+
+    &__form-label {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 10px;
+    }
+
+    &__form-input {
+        width: 310px !important;
+    }
+
+    &__form-top {
+        display: flex;
+        margin-bottom: 50px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__form-bottom {
+        display: flex;
+        align-items: center;
+    }
+
+    &__form {
+        margin-bottom: 65px;
+    }
+
+    &__form-btn {
+        border-radius: var(--default-radius);
+        border: 1px solid #000;
+        padding: 0 10px;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+}
