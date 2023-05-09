@@ -1,9 +1,12 @@
 import { FC, useEffect } from "react";
 import "./Menu.scss";
 import { useMenu } from "../../store/menu";
+import { useNavigate } from "react-router-dom";
 
 const Menu: FC = (): JSX.Element => {
   const { isActive, setIsActive } = useMenu();
+
+  const navigate = useNavigate();
 
   const handleClickClose = () => {
     setIsActive(false);
@@ -22,7 +25,7 @@ const Menu: FC = (): JSX.Element => {
       className={`${"menu"} ${isActive && "active"}`}
       onClick={(e) => e.stopPropagation()}
     >
-        <div className="menu__multi-account"></div>
+      <div className="menu__multi-account"></div>
       <img src="/arrow.png" alt="" className="menu__arrow" />
       <div className="menu__user">
         <img src="/user-139.svg" alt="user" />
@@ -38,7 +41,7 @@ const Menu: FC = (): JSX.Element => {
         <li className="menu__nav-li">
           Медицинская карта <img src="/arrow.png" alt="" />
         </li>
-        <li className="menu__nav-li">
+        <li className="menu__nav-li" onClick={() => navigate("/location")}>
           Местоположение <img src="/arrow.png" alt="" />
         </li>
         <li className="menu__nav-line"></li>

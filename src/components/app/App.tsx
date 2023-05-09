@@ -9,9 +9,9 @@ import {
   ForgotPass,
   CreateNewPass,
   Map,
-  Main
+  Main,
 } from "../../pages";
-
+import Location from "../../pages/location/Location";
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
       <Route path={ROUTES.forgotPass} element={<ForgotPass />} />
       <Route path={ROUTES.newPass} element={<CreateNewPass />} />
       <Route path={ROUTES.map} element={<Map />} />
+      <Route path={ROUTES.location} element={<Location />} />
     </Routes>
   );
 }
