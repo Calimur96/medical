@@ -11,13 +11,17 @@ const Footer: FC = (): JSX.Element => {
       </div>
       <ul className="footer__ul">
         <li>
-          <BsHouseHeart size={25} />
+          <img
+            src="/fi-rr-home.png"
+            alt="home"
+            style={{ transform: "translateY(3.5px)" }}
+          />
         </li>
         <li>
-          <BsChatSquareText size={25} />
+          <img src="/convert.png" alt="convert" />
         </li>
         <li>
-          <BsSearch size={25} />
+          <img src="/search.png" alt="search" />
         </li>
       </ul>
     </footer>
