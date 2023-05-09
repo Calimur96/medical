@@ -40,7 +40,13 @@ const Menu: FC = (): JSX.Element => {
           Аккаунт <img src="/arrow.png" alt="" />
         </li>
         <li className="menu__nav-line"></li>
-        <li className="menu__nav-li">
+        <li
+          className={`menu__nav-li ${isSelect === "entries" && "active"}`}
+          onClick={() => {
+            setIsSelect("entries");
+            navigate("/entries");
+          }}
+        >
           Записи <img src="/arrow.png" alt="" />
         </li>
         <li className="menu__nav-li">

@@ -12,6 +12,7 @@ import {
   Main,
 } from "../../pages";
 import Location from "../../pages/location/Location";
+import Entries from "../../pages/entries/Entries";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path={ROUTES.newPass} element={<CreateNewPass />} />
       <Route path={ROUTES.map} element={<Map />} />
       <Route path={ROUTES.location} element={<Location />} />
+      <Route path={ROUTES.entries} element={<Entries />} />
     </Routes>
   );
 }
