@@ -21,6 +21,5 @@ export const useLocation = () => {
     );
   }, []);
 
-
   return { lat, lng, location };
 };
