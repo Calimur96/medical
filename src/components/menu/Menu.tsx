@@ -32,10 +32,11 @@ const Menu: FC = (): JSX.Element => {
       </div>
       <ul className="menu__nav-ul">
         <li
-          className={`${
-            isSelect === "account" ? "menu__nav-li active" : "menu__nav-li"
-          }`}
-          onClick={() => setIsSelect("account")}
+          className={`menu__nav-li ${isSelect === "account" && "active"}`}
+          onClick={() => {
+            setIsSelect("account");
+            navigate("/account");
+          }}
         >
           Аккаунт <img src="/arrow.png" alt="" />
         </li>
