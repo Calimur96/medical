@@ -6,21 +6,24 @@ import Menu from "../menu/Menu";
 import Footer from "../footer/Footer";
 import CallBtn from "../callBtn/CallBtn";
 
+import ExtraCall from "../extraCall/ExtraCall";
+
 interface Props {
-    children: ReactNode;
+  children: ReactNode;
 }
 
 const Layout: FC<Props> = ({ children }): JSX.Element => {
-    return (
-        <div className="wrapper">
-            <Header />
-            <Sidebar />
-            <Menu />
-            <main>{children}</main>
-            <CallBtn className="pc__call" />
-            <Footer />
-        </div>
-    );
+  return (
+    <div className="wrapper">
+      <Header />
+      <Sidebar />
+      <Menu />
+      <ExtraCall />
+      <main>{children}</main>
+      <CallBtn className="pc__call" />
+      <Footer />
+    </div>
+  );
 };
 
 export default Layout;

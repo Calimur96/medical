@@ -1,24 +1,16 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import "./Menu.scss";
 import { useMenu } from "../../store/menu";
 import { useNavigate } from "react-router-dom";
+import { useCloseBody } from "../../hooks/useCloseBody";
 
 const Menu: FC = (): JSX.Element => {
   const { isActive, setIsActive, isSelect, setIsSelect } = useMenu();
 
   const navigate = useNavigate();
 
-  const handleClickClose = () => {
-    setIsActive(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("click", handleClickClose);
-
-    return () => {
-      window.removeEventListener("click", handleClickClose);
-    };
-  });
+  // Закрывает меню при нажатии на тело сайта кроме самого меню, если прописать в меню: onClick={(e) => e.stopPropagation()}
+  useCloseBody(setIsActive);
 
   return (
     <div
@@ -32,10 +24,11 @@ const Menu: FC = (): JSX.Element => {
       </div>
       <ul className="menu__nav-ul">
         <li
-          className={`${
-            isSelect === "account" ? "menu__nav-li active" : "menu__nav-li"
-          }`}
-          onClick={() => setIsSelect("account")}
+          className={`menu__nav-li ${isSelect === "account" && "active"}`}
+          onClick={() => {
+            setIsSelect("account");
+            navigate("/account");
+          }}
         >
           Аккаунт <img src="/arrow.png" alt="" />
         </li>
