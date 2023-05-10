@@ -1,13 +1,12 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { HiOutlinePhoneMissedCall } from "react-icons/hi";
 import { HiOutlineEnvelope } from "react-icons/hi2";
 import { motion } from "framer-motion";
 
 import "./ExtraCall.scss";
 import ExtraCallForm from "../extraCallForm/ExtraCallForm";
-import { useCloseBody } from "../../hooks/useCloseBody";
 import { useCall } from "../../store/call";
-import { useMenu } from "../../store/menu";
+import Modal from "../UI/modal/Modal";
 
 enum Select {
   TEL = "tel",
@@ -18,9 +17,6 @@ enum Select {
 const ExtraCall: FC = (): JSX.Element => {
   const [isSelect, setIsSelct] = useState<Select>(Select.NOTHING);
   const { isActive, setIsActive } = useCall();
-  const { setIsActive: setIsActiveMenu } = useMenu();
-
-  useCloseBody(setIsActive);
 
   const innerVariants = {
     visible: {
@@ -44,21 +40,12 @@ const ExtraCall: FC = (): JSX.Element => {
     },
   };
 
+  useEffect(() => {
+    setIsSelct(Select.NOTHING);
+  }, [isActive]);
+
   return isActive ? (
-    <motion.div
-      className="extra-call"
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: {
-          duration: 0.3,
-        },
-      }}
-      onClick={(e) => {
-        e.stopPropagation();
-        setIsActiveMenu(false);
-      }}
-    >
+    <Modal setIsActive={setIsActive}>
       <motion.div
         className="extra-call__inner"
         variants={innerVariants}
@@ -92,7 +79,7 @@ const ExtraCall: FC = (): JSX.Element => {
           <ExtraCallForm back={() => setIsSelct(Select.NOTHING)} />
         )}
       </motion.div>
-    </motion.div>
+    </Modal>
   ) : (
     <div></div>
   );
