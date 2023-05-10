@@ -38,7 +38,6 @@ const AccountInfo: FC = () => {
                                 id="input__file"
                                 className="input__file"
                                 onChange={handleFileLoad}
-                                maxLength={1}
                                 accept="image/*,.png,.jpg"
                             />
                             <label
