@@ -1,6 +1,5 @@
 import { FC } from "react";
 import "./Sidebar.scss";
-import { BsChatSquareText, BsSearch, BsHouseHeart } from "react-icons/bs";
 import { useMenu } from "../../store/menu";
 
 const Sidebar: FC = (): JSX.Element => {
@@ -21,14 +20,19 @@ const Sidebar: FC = (): JSX.Element => {
             Евгений
           </li>
           <li className="sidebar__nav-li sidebar__nav-route">
-            <BsHouseHeart size={18} /> Главная
+            <img
+              src="/fi-rr-home.png"
+              alt="home"
+              style={{ transform: "translateX(-3.5px)" }}
+            />{" "}
+            Главная
           </li>
           <li className="sidebar__nav-li sidebar__nav-route">
-            <BsChatSquareText size={18} />
+            <img src="/convert.png" alt="convert" />
             Сообщения
           </li>
           <li className="sidebar__nav-li sidebar__nav-route">
-            <BsSearch size={18} />
+            <img src="/search.png" alt="search" />
             Поиск
           </li>
         </ul>
