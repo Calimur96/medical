@@ -1,14 +1,13 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
 import "./Entries.scss";
 import EntriesAdd from "../../components/entriesAdd/EntriesAdd";
 import HeaderNavBar from "../../components/headerNavBar/HeaderNavBar";
+import { useEntries } from "../../components/entriesAdd/store";
 
 const Entries: FC = (): JSX.Element => {
-  const [isActive, setIsActive] = useState<boolean>(false);
-
-  console.log(isActive);
+  const { setIsActive, isActive } = useEntries();
 
   return (
     <Layout>
