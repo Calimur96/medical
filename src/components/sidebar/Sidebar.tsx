@@ -1,44 +1,51 @@
-import { FC } from "react";
-import "./Sidebar.scss";
+import { FC, MouseEvent } from "react";
+import { BsChatSquareText, BsSearch, BsHouseHeart } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+
 import { useMenu } from "../../store/menu";
 
-const Sidebar: FC = (): JSX.Element => {
-  const { setIsActive } = useMenu();
+import ROUTES from "../../routes/routes";
+import "./Sidebar.scss";
 
-  return (
-    <div className="sidebar">
-      <div className="sidebar__nav">
-        <ul className="sidebar__nav-ul">
-          <li
-            className="sidebar__nav-li sidebar__nav-user"
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsActive(true);
-            }}
-          >
-            <img src="/user-139.svg" alt="user" />
-            Евгений
-          </li>
-          <li className="sidebar__nav-li sidebar__nav-route">
-            <img
-              src="/fi-rr-home.png"
-              alt="home"
-              style={{ transform: "translateX(-3.5px)" }}
-            />{" "}
-            Главная
-          </li>
-          <li className="sidebar__nav-li sidebar__nav-route">
-            <img src="/convert.png" alt="convert" />
-            Сообщения
-          </li>
-          <li className="sidebar__nav-li sidebar__nav-route">
-            <img src="/search.png" alt="search" />
-            Поиск
-          </li>
-        </ul>
-      </div>
-    </div>
-  );
+const Sidebar: FC = (): JSX.Element => {
+    const { setIsActive } = useMenu();
+    const navigate = useNavigate();
+
+    return (
+        <div className="sidebar">
+            <div className="sidebar__nav">
+                <ul className="sidebar__nav-ul">
+                    <li
+                        className="sidebar__nav-li sidebar__nav-user"
+                        onClick={(e: MouseEvent<HTMLLIElement>) => {
+                            e.stopPropagation();
+                            setIsActive(true);
+                        }}
+                    >
+                        <img src="/user-139.svg" alt="user" />
+                        Евгений
+                    </li>
+                    <li
+                        className="sidebar__nav-li sidebar__nav-route"
+                        onClick={() => navigate(ROUTES.main)}
+                    >
+                        <BsHouseHeart size={18} /> Главная
+                    </li>
+                    <li className="sidebar__nav-li sidebar__nav-route">
+                        <BsChatSquareText size={18} />
+                        Сообщения
+                    </li>
+                    <li
+                        className="sidebar__nav-li sidebar__nav-route"
+                        onClick={() => navigate(ROUTES.search)}
+                    >
+                        <BsSearch size={18} />
+                        Поиск
+                    </li>
+                </ul>
+            </div>
+        </div>
+    );
 };
 
 export default Sidebar;

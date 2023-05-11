@@ -2,12 +2,9 @@
   // padding: 20px;
 
   &__header {
-    background-color: var(--red);
-    height: 50px;
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: flex-end;
-
     &-plus {
       font-size: 50px;
       transform: translateY(-5px);
