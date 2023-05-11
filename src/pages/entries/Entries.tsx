@@ -15,7 +15,6 @@ const Entries: FC = (): JSX.Element => {
     } else {
       document.body.style.overflowY = "auto";
     }
-    console.log(isActive);
   }, [isActive]);
 
   return (
