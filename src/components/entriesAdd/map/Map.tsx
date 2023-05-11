@@ -43,8 +43,6 @@ const options: Option[] = [
 ];
 
 const Map: FC = (): JSX.Element => {
-
-
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyAXgV7Xnqc6mVvOVbz8ljhMF1_BEjopOEA",
     libraries: ["places"],
@@ -62,7 +60,6 @@ const Map: FC = (): JSX.Element => {
     lat: 0,
     lng: 0,
   });
-
 
   return (
     <div className="entries__map">
@@ -135,7 +132,7 @@ const Map: FC = (): JSX.Element => {
             className="entries__map-select"
             value={selectedOption}
             onChange={(el) => {
-              setSelect(null);
+              setSelect(el ? el.value.id : null);
               setZoom(15);
               setSelectedOption(el);
               setLocation(el ? el.value.location : { lat: 0, lng: 0 });
