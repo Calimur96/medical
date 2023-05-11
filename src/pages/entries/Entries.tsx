@@ -1,13 +1,9 @@
-
 import { FC, useState } from "react";
-import { FC } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
-import HeaderNavBar from "../../components/headerNavBar/HeaderNavBar";
-
 import "./Entries.scss";
-import { Link } from "react-router-dom";
 import EntriesAdd from "../../components/entriesAdd/EntriesAdd";
+import HeaderNavBar from "../../components/headerNavBar/HeaderNavBar";
 
 const Entries: FC = (): JSX.Element => {
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -18,7 +14,7 @@ const Entries: FC = (): JSX.Element => {
     <Layout>
       {isActive && <EntriesAdd setIsActive={setIsActive} />}
       <div className="entries">
-        <div className="entries__header">
+        <HeaderNavBar>
           <div
             className="entries__header-plus"
             onClick={(e) => {
@@ -28,7 +24,7 @@ const Entries: FC = (): JSX.Element => {
           >
             +
           </div>
-        </div>
+        </HeaderNavBar>
         <div className="entries__items">
           {[1, 2, 3, 4, 5, 6, 7, 8].map((e) => (
             <div className="entries__item" key={e}>
@@ -58,19 +54,19 @@ const Entries: FC = (): JSX.Element => {
                 </div>
                 <div className="entries__item-links">
                   <span>Онлайн/Офлайн</span>
-                                    <span>Адрес</span>
+                  <span>Адрес</span>
 
-                                    <Link to=".#">Перейти в профиль</Link>
+                  <Link to=".#">Перейти в профиль</Link>
 
-                                    <Link to=".#">Посмотреть анкету</Link>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                  <Link to=".#">Посмотреть анкету</Link>
                 </div>
+              </div>
             </div>
-        </Layout>
-    );
+          ))}
+        </div>
+      </div>
+    </Layout>
+  );
 };
 
 export default Entries;

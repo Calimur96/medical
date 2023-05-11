@@ -4,9 +4,8 @@ import { VscSettings } from "react-icons/vsc";
 
 import Layout from "../../components/Layout/Layout";
 import HeaderNavBar from "../../components/headerNavBar/HeaderNavBar";
-import RecentSearch from "./recentSearch/recentSearch";
-
 import "./Search.scss";
+import RecentSearch from "./recentSearch/RecentSearch";
 
 const Search: FC = () => {
     return (
