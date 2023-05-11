@@ -37,6 +37,7 @@
         height: 150px;
         border-radius: 70px;
         border: 1px solid var(--border-color);
+        position: relative;
     }
     
     &__item-content {
@@ -49,6 +50,33 @@
     &__item-img {
         width: 120px;
         height: 120px;
+    }
+
+    &__item-rating {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, 0);
+    }
+
+    &__header-filters {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 24px;
+    }
+
+    &__header-filter {
+        cursor: pointer;
+        color: #FFD2D2;
+    }
+
+    &__ul {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 10px;
+        margin-left: 50px;
     }
 
 }

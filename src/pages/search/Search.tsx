@@ -1,13 +1,21 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { VscSettings } from "react-icons/vsc";
+import { motion } from "framer-motion";
 
 import Layout from "../../components/Layout/Layout";
 import HeaderNavBar from "../../components/headerNavBar/HeaderNavBar";
-import "./Search.scss";
 import RecentSearch from "./recentSearch/RecentSearch";
+import Centers from "./Centers/Centers";
+import Clinic from "./Clinic/Clinic";
+import Specialists from "./Specialists/Specialists";
+
+import "./Search.scss";
 
 const Search: FC = () => {
+    const [isFilterMenu, setIsFilterMenu] = useState<boolean>(false);
+    const [selectFilter, setSelectFilter] = useState<string>("recent");
+
     return (
         <Layout>
             <div className="search-page">
@@ -23,12 +31,87 @@ const Search: FC = () => {
                                 placeholder="Поиск..."
                             />
                         </div>
-                        <VscSettings size={30} />
+                        {isFilterMenu ? (
+                            <p
+                                style={{ color: "#fff", cursor: "pointer" }}
+                                onClick={() => setIsFilterMenu(false)}
+                            >
+                                Отмена
+                            </p>
+                        ) : (
+                            <VscSettings
+                                size={30}
+                                style={{ cursor: "pointer" }}
+                                onClick={() => setIsFilterMenu((bol) => !bol)}
+                            />
+                        )}
                     </div>
                 </HeaderNavBar>
+                {isFilterMenu && (
+                    <motion.div
+                        initial={{
+                            opacity: 0,
+                            scale: 0.9,
+                            y: "-200px",
+                        }}
+                        animate={{ opacity: 1, y: "0", scale: 1 }}
+                    >
+                        <HeaderNavBar>
+                            <div className="container">
+                                <div className="search-page__header-filters">
+                                    <p
+                                        className="search-page__header-filter"
+                                        style={{
+                                            color:
+                                                selectFilter === "centers"
+                                                    ? "#fff"
+                                                    : "",
+                                        }}
+                                        onClick={() =>
+                                            setSelectFilter("centers")
+                                        }
+                                    >
+                                        Центры:
+                                    </p>
+                                    <p
+                                        className="search-page__header-filter"
+                                        style={{
+                                            color:
+                                                selectFilter === "clinic"
+                                                    ? "#fff"
+                                                    : "",
+                                        }}
+                                        onClick={() =>
+                                            setSelectFilter("clinic")
+                                        }
+                                    >
+                                        Клиника:
+                                    </p>
+                                    <p
+                                        className="search-page__header-filter"
+                                        style={{
+                                            color:
+                                                selectFilter === "specialists"
+                                                    ? "#fff"
+                                                    : "",
+                                        }}
+                                        onClick={() =>
+                                            setSelectFilter("specialists")
+                                        }
+                                    >
+                                        Специалисты:
+                                    </p>
+                                </div>
+                            </div>
+                        </HeaderNavBar>
+                    </motion.div>
+                )}
                 <div className="search-page__inner">
                     <div className="container">
-                        <RecentSearch />
+                        {selectFilter === "recent" && <RecentSearch />}
+                        {selectFilter === "centers" && <Centers />}
+                        {selectFilter === "clinic" && <Clinic />}
+                        {selectFilter === "specialists" && <Specialists />}
                     </div>
                 </div>
             </div>
