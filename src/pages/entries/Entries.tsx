@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
 import "./Entries.scss";
@@ -8,6 +8,15 @@ import { useEntries } from "../../components/entriesAdd/store";
 
 const Entries: FC = (): JSX.Element => {
   const { setIsActive, isActive } = useEntries();
+
+  useEffect(() => {
+    if (isActive) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+    console.log(isActive);
+  }, [isActive]);
 
   return (
     <Layout>

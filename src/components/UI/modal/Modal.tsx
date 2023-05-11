@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useEffect } from "react";
 import { useMenu } from "../../../store/menu";
 import { useCloseBody } from "../../../hooks/useCloseBody";
 import "./Modal.scss";
