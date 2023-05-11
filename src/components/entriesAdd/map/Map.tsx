@@ -43,6 +43,8 @@ const options: Option[] = [
 ];
 
 const Map: FC = (): JSX.Element => {
+
+
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyAXgV7Xnqc6mVvOVbz8ljhMF1_BEjopOEA",
     libraries: ["places"],
@@ -60,6 +62,7 @@ const Map: FC = (): JSX.Element => {
     lat: 0,
     lng: 0,
   });
+
 
   return (
     <div className="entries__map">

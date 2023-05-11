@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import Modal from "../UI/modal/Modal";
 import "./EntriesAdd.scss";
 import { useEntries } from "./store";
@@ -9,7 +9,15 @@ interface Props {
 }
 
 const EntriesAdd: FC<Props> = (): JSX.Element => {
-  const { setIsActive, step } = useEntries();
+  const { setIsActive, step, isActive } = useEntries();
+
+  useEffect(() => {
+    if (isActive) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+  }, [isActive]);
 
   return <Modal setIsActive={setIsActive}>{step === 1 ? <Map /> : ""}</Modal>;
 };
