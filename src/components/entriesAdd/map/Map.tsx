@@ -69,6 +69,7 @@ const Map: FC = (): JSX.Element => {
           zoom={zoom}
           options={{
             disableDefaultUI: true,
+            clickableIcons: false,
           }}
           center={location}
           onDrag={() => setSelect(null)}
