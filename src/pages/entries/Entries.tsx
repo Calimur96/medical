@@ -1,14 +1,28 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import "./Entries.scss";
 import { Link } from "react-router-dom";
+import EntriesAdd from "../../components/entriesAdd/EntriesAdd";
 
 const Entries: FC = (): JSX.Element => {
+  const [isActive, setIsActive] = useState<boolean>(false);
+
+  console.log(isActive);
+
   return (
     <Layout>
+      {isActive && <EntriesAdd setIsActive={setIsActive} />}
       <div className="entries">
         <div className="entries__header">
-          <div className="entries__header-plus">+</div>
+          <div
+            className="entries__header-plus"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsActive(true);
+            }}
+          >
+            +
+          </div>
         </div>
         <div className="entries__items">
           {[1, 2, 3, 4, 5, 6, 7, 8].map((e) => (
