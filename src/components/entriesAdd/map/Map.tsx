@@ -132,6 +132,7 @@ const Map: FC = (): JSX.Element => {
             className="entries__map-select"
             value={selectedOption}
             onChange={(el) => {
+              setSelect(null);
               setZoom(15);
               setSelectedOption(el);
               setLocation(el ? el.value.location : { lat: 0, lng: 0 });
