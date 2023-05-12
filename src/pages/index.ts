@@ -9,6 +9,7 @@ import Location from "./location/Location";
 import Entries from "./entries/Entries";
 import Account from "./account/Account";
 import Search from "./search/Search";
+import ClinicInformatiom from "./clinicInformation/ClinicInformatiom";
 
 export {
     RegistrationPage,
@@ -22,4 +23,5 @@ export {
     Entries,
     Account,
     Search,
+    ClinicInformatiom,
 };

@@ -11,6 +11,7 @@ const ROUTES = {
     entries: "/entries",
     account: "/account",
     search: "/search",
+    clinicInformation: "clinic-information/:id",
 };
 
 export default ROUTES;

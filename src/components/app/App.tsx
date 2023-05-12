@@ -14,6 +14,7 @@ import {
     Entries,
     Account,
     Search,
+    ClinicInformatiom,
 } from "../../pages";
 
 function App() {
@@ -31,6 +32,10 @@ function App() {
             <Route path={ROUTES.entries} element={<Entries />} />
             <Route path={ROUTES.account} element={<Account />} />
             <Route path={ROUTES.search} element={<Search />} />
+            <Route
+                path={ROUTES.clinicInformation}
+                element={<ClinicInformatiom />}
+            />
         </Routes>
     );
 }

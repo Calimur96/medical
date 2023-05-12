@@ -1,0 +1,111 @@
+.clinic-information {
+    &__header {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__inner {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 30px;
+    }
+
+    &__title {
+        font-size: 32px;
+        font-weight: 600;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+
+    &__item-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-gap: 100px;
+    }
+
+    &__item-ul {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 10px;
+    }
+
+    &__rating-boxes {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__rating-box {
+        width: 500px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__rating-box-data {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 10px;
+    }
+
+    &__btn {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, 0px);
+    }
+
+    &__rating-box-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-gap: 20px;
+    }
+
+    &__rating-box-text {
+        font-size: 18px;
+    }
+
+    &__rating {
+        display: flex;
+        align-items: center;
+        grid-gap: 10px;
+    }
+
+    &__rating_up,
+    &__rating_lose {
+        display: flex;
+        align-items: center;
+
+        span {
+            color: #000;
+        }
+    }
+
+    &__rating_lose {
+        color: #FA2828;
+    }
+
+    &__rating_up {
+        color: #4DDD35;
+    }
+
+    &__user-rating {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-gap: 25px;
+    }
+}

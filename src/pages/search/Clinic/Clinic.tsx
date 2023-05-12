@@ -1,14 +1,18 @@
 import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 
 import StarRating from "../../../components/starRating/StarRating";
 
 import avatar from "../../../assets/avatar.png";
 
 const Clinic: FC = () => {
+    const navigate = useNavigate();
+
     return (
         <div
             className="search-page__item"
             style={{ height: "355px", padding: "10px 60px" }}
+            onClick={() => navigate(`/clinic-information/1`)}
         >
             <div
                 className="search-page__item-content"
