@@ -1,4 +1,9 @@
-import { useLoadScript, GoogleMap, MarkerF } from "@react-google-maps/api";
+import {
+  useLoadScript,
+  GoogleMap,
+  InfoWindowF,
+  MarkerF,
+} from "@react-google-maps/api";
 import { FC, useState } from "react";
 import "./Map.scss";
 import Select from "react-select";
@@ -61,6 +66,10 @@ const Map: FC = (): JSX.Element => {
     lng: 0,
   });
 
+  const handleMouseEnter = (id: number) => {
+    setSelect(id);
+  };
+
   return (
     <div className="entries__map">
       {isLoaded && (
@@ -72,59 +81,59 @@ const Map: FC = (): JSX.Element => {
             clickableIcons: false,
           }}
           center={location}
-          onDrag={() => setSelect(null)}
-          onZoomChanged={() => setSelect(null)}
           onClick={() => setSelect(null)}
           key={2}
         >
           {options.map((e) => {
             return (
-              <span className="entries__map-inner">
-                <MarkerF
-                  key={e.value.name}
-                  position={e.value.location}
-                  clickable={true}
-                  onClick={() => {
-                    if (select === e.value.id) {
-                      setSelect(null);
-                      return;
-                    }
+              <MarkerF
+                key={e.value.name}
+                position={e.value.location}
+                clickable={true}
+                onMouseOver={() => handleMouseEnter(e.value.id)}
+                onClick={() => {
+                  if (select === e.value.id) return setSelect(null);
 
-                    setLocation(e.value.location);
-                    setZoom(15.0000000000001);
+                  setLocation(e.value.location);
+                  setZoom(15.0000000000001);
+                  setTimeout(() => {
+                    setZoom(15);
                     setTimeout(() => {
-                      setZoom(15);
-                      setTimeout(() => {
-                        setSelectedOption(e);
-                        setSelect(e.value.id);
-                      }, 1);
+                      setSelectedOption(e);
+                      setSelect(e.value.id);
                     }, 1);
-                  }}
-                />
-                <div
-                  className={`entries__map-content ${
-                    select === e.value.id && "active"
-                  }`}
-                >
-                  <div className="entries__map-content-center">
-                    <img src="/hospital.png" alt="hospital" />
-                    <div className="entries__map-content-center-info">
-                      <h2>Центр: название</h2>
-                      <h2>Изучено заболеваний</h2>
+                  }, 1);
+                }}
+              >
+                {select === e.value.id && (
+                  <InfoWindowF
+                    position={e.value.location}
+                    options={{
+                      pixelOffset: new window.google.maps.Size(0, -30),
+                    }}
+                  >
+                    <div className={`entries__map-content`}>
+                      <div className="entries__map-content-center">
+                        <img src="/hospital.png" alt="hospital" />
+                        <div className="entries__map-content-center-info">
+                          <h2>Центр: название</h2>
+                          <h2>Изучено заболеваний</h2>
+                        </div>
+                      </div>
+                      <div className="entries__map-content-info">
+                        <h2>Наблюдалось: 300</h2>
+                        <h2>Лечилось: 250</h2>
+                        <h2>Вылечилось: 200</h2>
+                        <h2>Кол-во специалистов: 5</h2>
+                        <h2>Доступно: Онлайн/Оффлайн</h2>
+                      </div>
+                      <div className="entries__map-content-btn">
+                        <button>Перейти</button>
+                      </div>
                     </div>
-                  </div>
-                  <div className="entries__map-content-info">
-                    <h2>Наблюдалось: 300</h2>
-                    <h2>Лечилось: 250</h2>
-                    <h2>Вылечилось: 200</h2>
-                    <h2>Кол-во специалистов: 5</h2>
-                    <h2>Доступно: Онлайн/Оффлайн</h2>
-                  </div>
-                  <div className="entries__map-content-btn">
-                    <button>Перейти</button>
-                  </div>
-                </div>
-              </span>
+                  </InfoWindowF>
+                )}
+              </MarkerF>
             );
           })}
           <Select
